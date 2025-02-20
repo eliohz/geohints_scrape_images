@@ -1,15 +1,23 @@
 import os
 import csv
+import re
 
 def generate_quizlet_csv(folder_path, output_csv):
+    """
+    Creates a CSV file for Quizlet with image names as answers.
+    The images are taken from the specified folder.
+    """
     entries = []
+    
     # Iterate through files in the folder
     for filename in os.listdir(folder_path):
         # Check if the file is an image
         if filename.lower().endswith((".png", ".jpg", ".jpeg", ".gif")):
             # Remove the file extension
             name_without_ext = os.path.splitext(filename)[0]
-            entries.append([filename, name_without_ext])
+            # Remove numbers from the filename
+            name_without_numbers = re.sub(r'\d+', '', name_without_ext).strip()
+            entries.append([filename, name_without_numbers])
     
     # Save as CSV
     with open(output_csv, "w", newline="", encoding="utf-8") as file:
