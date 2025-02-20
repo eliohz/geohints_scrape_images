@@ -40,7 +40,7 @@ The script will automatically scrape the pages:
 - `scrape_and_download(url, output_folder)`: Orchestrates the full scraping and downloading process.
 
 # Quizlet CSV Generator
-The Script `quizlet_csv_generator` generates CSV files for Quizlet from images stored in a given folder. Each image filename (without extension and count) is used as the answer, and the image itself is referenced in the CSV. The output can be imported directly into Quizlet to create flashcard sets with images on the front and names on the back.
+The Script `quizlet_csv_generator.py` generates CSV files for Quizlet from images stored in a given folder. Each image filename (without extension and count) is used as the answer, and the image itself is referenced in the CSV. The output can be imported directly into Quizlet to create flashcard sets with images on the front and names on the back.
 
 Usage
 Place your images in a folder.
