@@ -1,6 +1,7 @@
 import os
 import csv
 import re
+import argparse
 
 def generate_quizlet_csv(folder_path, output_csv):
     """
@@ -28,9 +29,13 @@ def generate_quizlet_csv(folder_path, output_csv):
     print(f"CSV file created: {output_csv}")
 
 if __name__ == "__main__":
-    # Example: Create CSVs for two folders
-    folder1 = "path/to/folder1"  # Replace with actual path
-    folder2 = "path/to/folder2"  # Replace with actual path
+    parser = argparse.ArgumentParser(description="Generate a Quizlet CSV file from images.")
+    parser.add_argument("folder_path", type=str, help="Path to the folder containing images")
     
-    generate_quizlet_csv(folder1, "quizlet_1.csv")
-    generate_quizlet_csv(folder2, "quizlet_2.csv")
+    args = parser.parse_args()
+    
+    # Generate output file name based on folder name
+    folder_name = os.path.basename(args.folder_path)
+    output_csv = os.path.join(args.folder_path, f"{folder_name}.csv")
+    
+    generate_quizlet_csv(args.folder_path, output_csv)
