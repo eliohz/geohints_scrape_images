@@ -1,6 +1,6 @@
 # Web Scraper for Bollards and Utility Poles
 
-This Python script scrapes images of bollards and utility poles from [GeoHints](https://geohints.com). The images are downloaded and saved with appropriate titles extracted from the webpage.
+This Python script scrapes images of bollards and utility poles from [GeoHints](https://geohints.com). The images are downloaded and saved with appropriate titles extracted from the webpage. I used it to create a Quizlet Set
 
 ## Features
 - Extracts images from pages containing bollard and utility pole data.
